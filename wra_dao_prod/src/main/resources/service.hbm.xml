@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Service"
+		table="tr_orga_serv_association">
+		<composite-id name="id">
+			<key-property type="int" name="idOrganizaton" column="tr_organization_idtr_organization" />
+			<key-property type="int" name="idServiceTypeCurrent" column="tr_service_type_tr_service_type_code" />
+		</composite-id>
+		<property name="updateDate" type="date">
+			<column name="UPDATEDATE" length="45" not-null="false" />
+		</property>
+		<property name="createDate" type="date">
+			<column name="CREATEDATE" length="45" not-null="false" />
+		</property>
+		<property name="updateUser" type="string">
+			<column name="UPDATEUSER" length="45" not-null="false" />
+		</property>
+		<many-to-one name="idServiceTypeCurrent"
+			class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.ServiceType"
+			not-null="true">
+			<column name="IDTR_SERVICE_TYPE"></column>
+		</many-to-one>
+		<many-to-one name="idOrganizaton"
+			class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Organization"
+			not-null="true">
+			<column name="IDTR_ORGANIZATION"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
