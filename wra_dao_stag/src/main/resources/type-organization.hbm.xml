@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="fr.upec.esiag.m2.pds.easyes.wra.model.prod.OrgaType"
+	<class name="fr.upec.esiag.m2.easyes.wra.model.prod.OrgaType"
 		table="tr_organization_type" dynamic-update="true">
 		<id name="id" type="int">
 			<column name="IDTR_ORGANIZATION_TYPE" precision="5" scale="0" />

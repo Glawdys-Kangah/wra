@@ -17,10 +17,13 @@
 		<property name="show_sql">true</property>
 		<!-- 
 		<mapping resource="patientReception.hbm.xml" />
+		<mapping resource="type-service.hbm.xml" />
 		 -->
 		<mapping resource="address.hbm.xml" />
 		<mapping resource="person.hbm.xml" />
 		<mapping resource="organization.hbm.xml" />
+		<mapping resource="type-organization.hbm.xml" />
+		
 		
 		 
 		

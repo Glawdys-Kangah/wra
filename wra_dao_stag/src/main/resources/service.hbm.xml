@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Service"
+	<class name="fr.upec.esiag.m2.easyes.wra.model.prod.Service"
 		table="tr_orga_serv_association">
 		<composite-id name="id">
 			<key-property type="int" name="idOrganizaton"

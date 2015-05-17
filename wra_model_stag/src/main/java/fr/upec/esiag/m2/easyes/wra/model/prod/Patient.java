@@ -28,7 +28,7 @@ public class Patient extends Person{
 	
 	private int idOrganization;
 	
-	private Hospital hospital;
+	private int idHospital;
 	
 	
 	public String getNir() {
@@ -37,12 +37,7 @@ public class Patient extends Person{
 	public void setNir(String nir) {
 		this.nir = nir;
 	}
-	/*public MedicalRecord getMedicalRecord() {
-		return medicalRecord;
-	}
-	public void setMedicalRecord(MedicalRecord medicalRecord) {
-		this.medicalRecord = medicalRecord;
-	}*/
+
 	public String getPhoneNumberHome() {
 		return phoneNumberHome;
 	}
@@ -68,11 +63,11 @@ public class Patient extends Person{
 	public void setIdOrganization(int idOrganization) {
 		this.idOrganization = idOrganization;
 	}
-	public Hospital getHospital() {
-		return hospital;
+	public int getIdHospital() {
+		return idHospital;
 	}
-	public void setHospital(Hospital hospital) {
-		this.hospital = hospital;
+	public void setIdHospital(int idHospital) {
+		this.idHospital = idHospital;
 	}
 
 }

@@ -1,7 +1,6 @@
 package fr.upec.esiag.m2.easyes.wra.model.prod;
 
-import java.util.HashSet;
-import java.util.Set;
+
 
 public class Hospital extends Organization {
 		
@@ -10,22 +9,23 @@ public class Hospital extends Organization {
 		 */
 		private String finess;
 		
-		private Set<Patient> patients = new HashSet<Patient>(0);
+		private int idPatient;
 
-		public Set<Patient> getPatients() {
-			return patients;
-		}
-
-		public void setPatients(Set<Patient> patients) {
-			this.patients = patients;
-		}
-
+		
 		public String getFiness() {
 			return finess;
 		}
 
 		public void setFiness(String finess) {
 			this.finess = finess;
+		}
+
+		public int getIdPatient() {
+			return idPatient;
+		}
+
+		public void setIdPatient(int idPatient) {
+			this.idPatient = idPatient;
 		}
 		
 

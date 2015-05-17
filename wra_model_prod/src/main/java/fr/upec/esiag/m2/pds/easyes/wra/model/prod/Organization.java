@@ -1,7 +1,6 @@
 package fr.upec.esiag.m2.pds.easyes.wra.model.prod;
 
-import java.util.HashSet;
-import java.util.Set;
+
 
 import fr.upec.esiag.m2.easyes.wra.model.AbstractEntity;
 
@@ -46,7 +45,10 @@ public class Organization extends AbstractEntity {
 	
 	private Float longitude;
 	
-	private OrgaType orgaType;
+	private int orgaType;
+
+
+	
 
 	
 
@@ -141,13 +143,17 @@ public class Organization extends AbstractEntity {
 	public void setLongitude(Float longitude) {
 		this.longitude = longitude;
 	}
-	
-	public OrgaType getOrgaType() {
+
+	public int getOrgaType() {
 		return orgaType;
 	}
 
-	public void setOrgaType(OrgaType orgaType) {
+	public void setOrgaType(int orgaType) {
 		this.orgaType = orgaType;
 	}
+
+	
+	
+
 	
 }

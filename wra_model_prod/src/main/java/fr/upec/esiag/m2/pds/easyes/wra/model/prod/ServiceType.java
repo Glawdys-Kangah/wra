@@ -16,8 +16,7 @@ public class ServiceType extends AbstractType {
 		 */
 		private String categoryService;
 		
-		private Set<Organization> organizationSet = new HashSet<Organization>(0);
-
+		
 		public String getCategoryService() {
 			return categoryService;
 		}
@@ -26,12 +25,7 @@ public class ServiceType extends AbstractType {
 			this.categoryService = categoryService;
 		}
 
-		public Set<Organization> getOrganizationSet() {
-			return organizationSet;
-		}
-
-		public void setOrganizationSet(Set<Organization> organizationSet) {
-			this.organizationSet = organizationSet;
-		}
+		
+		
 		
 }

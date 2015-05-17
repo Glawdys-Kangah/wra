@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Organization"
+	<class name="fr.upec.esiag.m2.easyes.wra.model.prod.Organization"
 		table="tr_organization" dynamic-insert="true">
 		<id name="id" type="int">
 			<column name="IDTR_ORGANIZATION" precision="5" scale="0" />
@@ -56,19 +56,11 @@
 		<property name="updateUser" type="string">
 			<column name="UPDATEUSER" length="45" not-null="false" />
 		</property>
+		<property name="orgaType" type="int">
+			<column name="IDTR_ORGANIZATION_TYPE"  not-null="false" />
+		</property>
 		
 		
-		<many-to-one name="orgaType"
-			class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.OrgaType"
-			not-null="true" lazy="false">
-			<column name="IDTR_ORGANIZATION_TYPE"></column>
-		</many-to-one>
-		<joined-subclass
-			name="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Hospital"
-			table="tr_orga_hospital" lazy="false">
-			<key column="IDTR_ORGANIZATION" />
-			<property name="finess" type="string" column="TR_HOSPITAL_FINESS" />
-			
-		</joined-subclass>
+		
 	</class>
 </hibernate-mapping>

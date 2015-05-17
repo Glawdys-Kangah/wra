@@ -36,15 +36,7 @@ public class ServiceDao extends AbstractEntityDao<Service>{
 		return list;
 	}
 	
-	public Service addServices(Service service){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		Organization orga = (Organization)new OrganizationDao().getById(service.getIdOrganizaton());
-		orga.setServicesSet(service.getServices());
-		session.update(orga);
-		session.close();
-		return service;
-	}
+	
 	
 	@SuppressWarnings("unchecked")
 

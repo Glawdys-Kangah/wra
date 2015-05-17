@@ -167,6 +167,7 @@ public class PatientDao  extends AbstractEntityDao<Patient>{
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(patient);
+		session.getTransaction().commit();
 		session.close();
 	}
 	

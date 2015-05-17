@@ -41,11 +41,10 @@
 			<property name="mailAdress" type="string"
 				column="tr_person_patient_mail_adress" length="45" not-null="false" />
 			<property name="idOrganization" type="int"
-				column="tr_person_patient_id_organization" length="5" not-null="false" />
-			<many-to-one name="hospital" class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.Hospital"
-				lazy="false" cascade="all">
-				<column name="IDTR_ORGANIZATION" />
-			</many-to-one>
+				column="tr_person_patient_id_organization"  not-null="false" />
+			<property name="idHospital" type="int"
+				column="IDTR_ORGANIZATION"  not-null="false" />
+			
 			
 		</joined-subclass>
 	</class>

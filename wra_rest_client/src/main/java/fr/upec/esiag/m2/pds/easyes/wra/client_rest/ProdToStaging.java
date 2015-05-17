@@ -2,6 +2,9 @@ package fr.upec.esiag.m2.pds.easyes.wra.client_rest;
 
 
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -16,7 +19,6 @@ import org.easybatch.core.api.*;
 import org.springframework.web.client.RestTemplate;
 
 public class ProdToStaging implements RecordReader {
-	private ModelFetchDataPToS modelFetch = new ModelFetchDataPToS();
 	private PatientDao patientDao = new PatientDao();
 	public static final String GET_PATIENT = "http://localhost:8081/wra_webApp_api/getPatient";
 	private RestTemplate restTemplate = new RestTemplate();
@@ -29,19 +31,38 @@ public class ProdToStaging implements RecordReader {
 			System.out.println(lhm.get("firstName").toString());
         	Patient patient = new Patient();
         	
-        	patient.setFirstName(lhm.get("firstName").toString());
-        	/*patient.setBirthdate((Date)lhm.get("birthdate"));
-        	patient.setAddress((Address)lhm.get("address"));
+        	/*;
         	patient.setCreateDate((Date)lhm.get("createDate"));
-        	patient.setUpdateDate((Date)lhm.get("updateDate"));
-        	patient.setId((Integer)lhm.get("id"));
-        	patient.setGender((Character)lhm.get("gender"));
-        	patient.setIdOrganization((Integer)lhm.get("idOrganisation"));
+        	patient.setUpdateDate((Date)lhm.get("updateDate"));*/
+        	int parseId = Integer.parseInt(lhm.get("id").toString());
+        	int parseIdOrga = Integer.parseInt(lhm.get("idOrganization").toString()); 
+        	System.out.println(parseId);
+        	System.out.println(lhm.get("id").toString());
+        	Character parseGender = lhm.get("gender").toString().charAt(0);
+        	Date parseBD = stringToDate(lhm.get("birthdate").toString());
+        	
+        	//patient.setBirthdate(parseBD);
+        	patient.setFirstName(lhm.get("firstName").toString());
+        	patient.setId(parseId);
+        	patient.setGender(parseGender);
+        	patient.setIdOrganization(parseIdOrga);
         	patient.setLastName(lhm.get("lastName").toString());
         	patient.setNir(lhm.get("nir").toString());
-*/			patientDao.addPatient(patient);	
+			patientDao.addPatient(patient);	
 		}
 		
+	}
+	
+	public Date stringToDate(String stringTarget){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date result = null;
+		try {
+			result = df.parse(stringTarget);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return result;
 	}
 
 	@Override

@@ -1,8 +1,7 @@
 package fr.upec.esiag.m2.pds.easyes.wra.model.prod;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 
 import fr.upec.esiag.m2.easyes.wra.model.AbstractEntity;
 
@@ -27,7 +26,7 @@ public class Service extends AbstractEntity {
 	/**
 	 * The set of Service types selected by the user  
 	 */
-	private ServiceType services =  new ServiceType();
+	private int idServiceType;
 	
 	public int getIdOrganizaton() {
 		return idOrganizaton;
@@ -47,11 +46,12 @@ public class Service extends AbstractEntity {
 	public void setListIdTypeOfServices(ArrayList<Integer> listIdTypeOfServices) {
 		this.listIdTypeOfServices = listIdTypeOfServices;
 	}
-	public ServiceType getServices() {
-		return services;
+	
+	public int getIdServiceType() {
+		return idServiceType;
 	}
-	public void setServices(ServiceType services) {
-		this.services = services;
+	public void setIdServiceType(int idServiceType) {
+		this.idServiceType = idServiceType;
 	}
 	
 
