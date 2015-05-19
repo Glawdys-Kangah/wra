@@ -2,10 +2,14 @@ package fr.upec.esiag.m2.pds.easyes.wra.server;
 
 
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.SimpleFormatter;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -101,7 +105,7 @@ public class WraRestServer {
 	}
 
 	@RequestMapping(value = "/getOrganization", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of organization
 	 * @return
@@ -119,7 +123,7 @@ public class WraRestServer {
 
 
 	@RequestMapping(value = "/getOrgaType", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of organization
 	 * @return
@@ -132,7 +136,8 @@ public class WraRestServer {
 
 
 	//Start --Not necessary 
-	@RequestMapping(value="/getHospital", method = RequestMethod.GET)
+	@RequestMapping(value="/getHospital", 
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of hospital
 	 * @return list of hospital
@@ -142,7 +147,7 @@ public class WraRestServer {
 
 	}
 	@RequestMapping(value = "/getHospital/{startDate}/{endDate}", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	public List<Hospital> listHospitalDate(@PathVariable("startDate") String startDate,
 			@PathVariable("endDate")String endDate){
 		Date stDate = parserDate.parseFormatDateWithHyphen(startDate);
@@ -170,7 +175,7 @@ public class WraRestServer {
 	}
 
 	@RequestMapping(value = "/getMedicalAct", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of medical act
 	 * @return
@@ -188,7 +193,7 @@ public class WraRestServer {
 
 
 	@RequestMapping(value = "/getTypeAct", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of type of act
 	 * @return
@@ -217,7 +222,7 @@ public class WraRestServer {
 	}
 
 	@RequestMapping(value = "/getService", 	
-			method = RequestMethod.GET)
+			method = {RequestMethod.POST,RequestMethod.GET})
 	/**
 	 * Get all the list of type of act
 	 * @return
@@ -232,42 +237,9 @@ public class WraRestServer {
 
 	}
 
-	//****************************************Health Path section***********************************************//
-	/*
-	 *//**
-	 * @param startDate
-	 * @param endDate
-	 * @return
-	 *//*
-	@RequestMapping(value = "/getHeathPath/{startDate}/{endDate}", 	
-			method = RequestMethod.GET)
-	  *//**
-	  * List of service adding between to date
-	  * @param startDate
-	  * @param endDate
-	  * @return
-	  *//*
-	public List<HealthPath> listHealthPathDate(@PathVariable("startDate") String startDate,
-			@PathVariable("endDate") String endDate) {
-		Date stDate = parserDate.parseFormatDateWithHyphen(startDate);
-		Date enDate = parserDate.parseFormatDateWithHyphen(endDate);
-		return healthPathDao.getAllByDate(stDate, enDate);
-	}
 
-	@RequestMapping(value = "/getHealthPath", 	
-			method = RequestMethod.GET)
-	   *//**
-	   * Get all the list of type of act
-	   * @return
-	   *//*
-	public List<HealthPath> listHealthPath() {
-		return healthPathDao.getAll();
-	}
+//***********************************************Log section*******************************************/
 
-	@RequestMapping(value="/getHealthPathUpdated", method = RequestMethod.GET)
-	public List<HealthPath> listHealthPathUpdated(){
-		return healthPathDao.getAllByUpdate();
 
-	}*/
-
+	
 }

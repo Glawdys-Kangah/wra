@@ -64,5 +64,15 @@ public class ServiceTypeDao extends AbstractTypeDao <ServiceType>{
 		session.close();
 		return lst;
 	}
+	/**
+	 * Method to add a list of patient in the database
+	 */
+	public void addServiceType(ServiceType serviceType){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(serviceType);
+		session.getTransaction().commit();
+		session.close();
+	}
 
 }

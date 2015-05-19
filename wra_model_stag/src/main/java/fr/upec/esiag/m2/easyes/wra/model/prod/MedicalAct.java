@@ -20,7 +20,7 @@ import fr.upec.esiag.m2.easyes.wra.model.AbstractEntity;
 		/**
 		 * Type of the act
 		 */
-		private TypeAct idtypeAct;
+		private int idtypeAct;
 		/**
 		 * Act time
 		 */
@@ -76,10 +76,10 @@ import fr.upec.esiag.m2.easyes.wra.model.AbstractEntity;
 		public void setActPrice(double actPrice) {
 			this.actPrice = actPrice;
 		}
-		public TypeAct getIdtypeAct() {
+		public int getIdtypeAct() {
 			return idtypeAct;
 		}
-		public void setIdtypeAct(TypeAct idtypeAct) {
+		public void setIdtypeAct(int idtypeAct) {
 			this.idtypeAct = idtypeAct;
 		}
 		public String getActNote() {

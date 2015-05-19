@@ -11,10 +11,10 @@
 			<column name="UPDATE_DATE" length="255" not-null="false" />
 		</property>
 		<property name="createDate" type="date">
-			<column name="CREATE_DATE" length="255" not-null="true" />
+			<column name="CREATE_DATE" length="255" not-null="false" />
 		</property>
 		<property name="updateUser" type="string">
-			<column name="UPDATE_USER" length="255" not-null="true" />
+			<column name="UPDATE_USER" length="255" not-null="false" />
 		</property>
 		<property name="codeAct" type="string">
 			<column name="tr_medical_ccam_code" length="255" not-null="true" />
@@ -43,11 +43,11 @@
 		<property name="actNote" type="string">
 			<column name="tr_medical_ccam_notes" length="3500" not-null="true" />
 		</property>
+		<property name="idtypeAct" type="int">
+			<column name="dtr_medical_act_speciality" length="3500" not-null="true" />
+		</property>
 		
-		<many-to-one name="idtypeAct" class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.TypeAct" lazy="false"
-			column="idtr_medical_act_speciality" not-null="true" />
-		
-		
+	
 		
 	</class>
 </hibernate-mapping>

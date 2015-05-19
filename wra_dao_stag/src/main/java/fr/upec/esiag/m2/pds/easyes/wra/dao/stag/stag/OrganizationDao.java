@@ -125,4 +125,14 @@ public class OrganizationDao extends AbstractEntityDao<Organization> {
 		return list;
 	}
 
+	/**
+	 * Method to add a list of organization in the database
+	 */
+	public void addOrganization(Organization organization){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(organization);
+		session.getTransaction().commit();
+		session.close();
+	}
 }

@@ -102,5 +102,17 @@ public class MedicalActDao extends AbstractEntityDao <MedicalAct> {
 			session.close();
 			return lst;
 		}
+		
+		/**
+		 * Method to add a list of medicalActin the database
+		 */
+		public void addMedicalAct(MedicalAct medicalAct){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.saveOrUpdate(medicalAct);
+			session.getTransaction().commit();
+			session.close();
+		}
 
+		
 }

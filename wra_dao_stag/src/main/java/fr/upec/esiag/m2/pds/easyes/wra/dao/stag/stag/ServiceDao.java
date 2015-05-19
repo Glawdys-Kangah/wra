@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import fr.upec.esiag.m2.easyes.wra.model.prod.Organization;
+
 import fr.upec.esiag.m2.easyes.wra.model.prod.Service;
 import fr.upec.esiag.m2.pds.easyes.wra.dao.AbstractEntityDao;
 import fr.upec.esiag.m2.pds.easyes.wra.dao.stag.utils.HibernateUtil;
@@ -84,5 +84,14 @@ public class ServiceDao extends AbstractEntityDao<Service>{
 		session.close();
 		return lst;
 	}
-
+	/**
+	 * Method to add a list of service in the database
+	 */
+	public void addService(Service service){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(service);
+		session.getTransaction().commit();
+		session.close();
+	}
 }

@@ -62,6 +62,15 @@ public class OrgaTypeDao extends AbstractTypeDao <OrgaType>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	/**
+	 * Method to add a list of orgaType in the database
+	 */
+	public void addOrgaType(OrgaType orgaType){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(orgaType);
+		session.getTransaction().commit();
+		session.close();
+	}
 
 }

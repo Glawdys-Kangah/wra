@@ -44,8 +44,9 @@
 			<column name="tr_medical_ccam_notes" length="3500" not-null="true" />
 		</property>
 		
-		<many-to-one name="idtypeAct" class="fr.upec.esiag.m2.pds.easyes.wra.model.prod.TypeAct" lazy="false"
-			column="idtr_medical_act_speciality" not-null="true" />
+		<property name="idtypeAct" type="int">
+			<column name="dtr_medical_act_speciality" length="3500" not-null="true" />
+		</property>
 		
 		
 		

@@ -53,6 +53,11 @@
 			<artifactId>wra_model_stag</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>fr.upec.esiag.m2.pds.easyes.wra</groupId>
+			<artifactId>wra_webApp_api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- Batch -->
 		<!-- read from a flat file -->
@@ -66,5 +71,17 @@
 			<artifactId>easybatch-jdbc</artifactId>
 			<version>2.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.googlecode.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		
+
 	</dependencies>
 </project>

@@ -23,6 +23,13 @@
 		<mapping resource="person.hbm.xml" />
 		<mapping resource="organization.hbm.xml" />
 		<mapping resource="type-organization.hbm.xml" />
+		<!--
+		<mapping resource="service.hbm.xml" />-->
+		<mapping resource="typeAct.hbm.xml" />
+		<mapping resource="medicalAct.hbm.xml" />
+		<!--  
+		<mapping resource="type-service.hbm.xml" />
+		-->
 		
 		
 		 
