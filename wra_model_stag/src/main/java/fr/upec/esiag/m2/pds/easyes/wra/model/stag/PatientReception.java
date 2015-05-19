@@ -17,15 +17,15 @@ public class PatientReception extends AbstractEntity{
 	/**
 	 * Type act 
 	 */
-	private TypeAct typeAct;
+	private int idTypeAct;
 	/**
 	 * Service where the patient is welcomed
 	 */
-	private Service service;
+	private int idService;
 	/**
 	 * patient 
 	 */
-	private Patient patient;
+	private int idPatient;
 	/**
 	 * Date when the patient arrive
 	 */
@@ -36,12 +36,7 @@ public class PatientReception extends AbstractEntity{
 	private Date dateCare;
 	
 	// setter and getter
-	public Patient getPatient() {
-		return patient;
-	}
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
+	
 	public Date getDateReception() {
 		return dateReception;
 	}
@@ -54,18 +49,25 @@ public class PatientReception extends AbstractEntity{
 	public void setDateCare(Date dateCare) {
 		this.dateCare = dateCare;
 	}
-	public Service getService() {
-		return service;
+	public int getIdTypeAct() {
+		return idTypeAct;
 	}
-	public void setService(Service service) {
-		this.service = service;
+	public void setIdTypeAct(int idTypeAct) {
+		this.idTypeAct = idTypeAct;
 	}
-	public TypeAct getTypeAct() {
-		return typeAct;
+	public int getIdService() {
+		return idService;
 	}
-	public void setTypeAct(TypeAct typeAct) {
-		this.typeAct = typeAct;
+	public void setIdService(int idService) {
+		this.idService = idService;
 	}
+	public int getIdPatient() {
+		return idPatient;
+	}
+	public void setIdPatient(int idPatient) {
+		this.idPatient = idPatient;
+	}
+	
 	
 	
 }

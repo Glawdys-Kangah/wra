@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="fr.upec.esiag.m2.easyes.wra.model.stag.PatientReception" table="tr_admin_patientReception">
+		<id name="id" type="int">
+			<column name="idtr_admin_patientReception" precision="5" scale="0" />
+			<generator class="increment" />
+		</id>
+		<property name="updateDate" type="date">
+			<column name="UPDATE_DATE" length="255" not-null="false" />
+		</property>
+		<property name="createDate" type="date">
+			<column name="CREATE_DATE" length="255" not-null="false" />
+		</property>
+		<property name="updateUser" type="string">
+			<column name="UPDATE_USER" length="255" not-null="false" />
+		</property>
+		<property name="idPatient" type="int">
+			<column name="tr_admin_reception_patient_idPatient"  not-null="true" />
+		</property>
+		<property name="idTypeAct" type="int">
+			<column name="tr_admin_reception_patient_idTypeAct"  not-null="true" />
+		</property>
+		<property name="idService" type="int">
+			<column name="tr_admin_reception_patient_idService"  not-null="true" />
+		</property>
+		<property name="dateReception" type="date">
+			<column name="tr_admin_reception_patient_dateReception" length="255" not-null="false" />
+		</property>
+		<property name="dateCare" type="date">
+			<column name="tr_admin_reception_patient_dateCare" length="255" not-null="false" />
+		</property>
+		
+				
+	</class>
+</hibernate-mapping>
